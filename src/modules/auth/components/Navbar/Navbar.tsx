@@ -16,13 +16,8 @@ export const Navbar = ({ user }: NavbarProps) => {
   return (
     <nav className="flex w-screen h-16 flex-row justify-between gap-4 items-center fixed top-0 p-4">
       <div className="flex flex-row gap-2 items-center">
-        <Image
-          src="/auris_logo.png"
-          alt="Auris system"
-          width={48}
-          height={48}
-        />
-        <h1 className="text-2xl font-bold">Auris System</h1>
+        <Image src="/logo_dark.png" alt="Nezuko 3" width={48} height={48} />
+        <h1 className="text-2xl font-bold">Nezuko 3</h1>
       </div>
       <div className="flex flex-row gap-4 items-center">
         {user.picture ? (

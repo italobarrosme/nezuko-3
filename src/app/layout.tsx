@@ -11,8 +11,8 @@ type Props = {
 }
 
 export const metadata: Metadata = {
-  title: 'Auris system',
-  description: 'Auris system',
+  title: 'Nezuko 3',
+  description: 'Nezuko 3',
   manifest: '/manifest.json',
   icons: {
     apple: '/apple-icon.png',

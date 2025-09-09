@@ -1,7 +1,7 @@
 services:
   postgres:
     image: postgres:16
-    container_name: auris-postgres
+    container_name: db-postgres
     restart: unless-stopped
     env_file: .env
     ports:
@@ -13,7 +13,7 @@ services:
 
   nextjs:
     build: .
-    container_name: auris-nextjs
+    container_name: nextjs
     restart: unless-stopped
     env_file: .env
     ports:

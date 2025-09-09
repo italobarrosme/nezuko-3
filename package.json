@@ -1,7 +1,7 @@
 {
-  "name": "auris-system",
-  "version": "5.0.0",
-  "description": "Sistema de automação de conversação",
+  "name": "nezuko-3",
+  "version": "1.0.0",
+  "description": "Nezuko 3",
   "private": true,
   "type": "module",
   "scripts": {
@@ -34,7 +34,7 @@
     "clsx": "^2.1.1",
     "eslint": "^9.28.0",
     "ky": "^1.8.1",
-    "next": "15.3.3",
+    "next": "15.5.2",
     "next-pwa": "^5.6.0",
     "npm": "^11.4.1",
     "react": "^19.1.0",
