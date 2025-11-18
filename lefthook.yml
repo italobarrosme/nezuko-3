@@ -20,7 +20,7 @@ pre-commit:
   parallel: true
   commands:
     biome-check:
-      glob: "*.{js,ts,jsx,tsx,css,scss,json,jsonc,md}"
+      glob: "*.{js,ts,jsx,tsx,css,scss,json,jsonc}"
       run: npx @biomejs/biome check --write {staged_files}
     tests:
       glob: "*.{js,ts,jsx,tsx}"
