@@ -1,18 +1,18 @@
+import { describe, expect, it } from 'vitest'
 import { roundNumber } from './roundNumber'
-import { describe, it, expect } from 'vitest'
 describe('roundNumber', () => {
   it('should default to 2 decimal places', () => {
-    expect(roundNumber(3.14159)).toBe('+3.14')
+    expect(roundNumber(Math.PI)).toBe('+3.14')
 
-    expect(roundNumber(2.71828)).toBe('+2.72')
+    expect(roundNumber(Math.E)).toBe('+2.72')
 
     expect(roundNumber(42.98765)).toBe('+42.99')
   })
 
   it('should round a number to the specified number of decimal places', () => {
-    expect(roundNumber(3.14159, 2)).toBe('+3.14')
+    expect(roundNumber(Math.PI, 2)).toBe('+3.14')
 
-    expect(roundNumber(2.71828, 3)).toBe('+2.718')
+    expect(roundNumber(Math.E, 3)).toBe('+2.718')
 
     expect(roundNumber(42.98765, 0)).toBe('+43')
   })

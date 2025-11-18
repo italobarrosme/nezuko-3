@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react'
-import { vi, describe, it, beforeEach, afterEach, expect } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { useRedirectTimeout } from './useRedirectTimeout'
 
 const defineUrl = (url: string) => {

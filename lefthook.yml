@@ -12,12 +12,9 @@ pre-push:
 pre-commit:
   parallel: true
   commands:
-    linter:
-      glob: 'src/*.{js,ts,jsx,tsx}'
-      run: npx eslint {staged_files}
-    prettier:
-      glob: '*.{js,ts,jsx,tsx,css,scss,json,md}'
-      run: npx prettier --write {staged_files}
+    biome-check:
+      glob: "*.{js,ts,jsx,tsx,css,scss,json,jsonc,md}"
+      run: npx @biomejs/biome check --write {staged_files}
     tests:
-      glob: '*.{js,ts,jsx,tsx}'
+      glob: "*.{js,ts,jsx,tsx}"
       run: npm run test:deploy --findRelatedTests --bail

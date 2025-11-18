@@ -1,8 +1,8 @@
 'use client'
 
-import Link from 'next/link'
-import { Icon } from '@iconify/react'
 import { useRedirectTimeout } from '@/modules/common/hooks/useRedirectTimeout'
+import { Icon } from '@iconify/react'
+import Link from 'next/link'
 
 const NotFound = () => {
   useRedirectTimeout(5000, '/')

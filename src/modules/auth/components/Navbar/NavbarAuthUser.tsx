@@ -7,10 +7,10 @@ type User = {
   email?: string
 }
 
-type NavbarProps = {
-  user: User | undefined
+type NavbarAuthUserProps = {
+  user: User | undefined | null
 }
-export const Navbar = ({ user }: NavbarProps) => {
+export const NavbarAuthUser = ({ user }: NavbarAuthUserProps) => {
   if (!user) return null
 
   return (

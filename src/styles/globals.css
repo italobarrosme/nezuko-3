@@ -1,41 +1,79 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+@import "./keyframes.css";
+
+@custom-variant dark (&:where(html.dark *));
 
 @theme {
-  --font-*: initial;
-  --font-sans: Graphik, sans-serif;
-  --font-serif: Merriweather, serif;
-  --font-mono: Fira Code;
+  /* Expondo as variáveis como tokens nativos do Tailwind 4 */
+  --color-primary: var(--color-primary);
+  --color-primary-hover: var(--color-primary-hover);
+  --color-primary-active: var(--color-primary-active);
+  --color-primary-foreground: var(--color-primary-foreground);
 
-  --animate-*: initial;
-  --animate-spin: spin 1s linear infinite;
-  --animate-wave: wave 1.6s ease-in-out infinite;
-  --animate-shimmer: shimmer infinite alternate ease-in-out;
-  --animate-bounce-in: bounce-in 0.3s ease-in-out;
-  --animate-fade-in: fade-in 0.2s ease-in-out;
-  --animate-fade-out: fade-out 0.2s ease-in-out;
-  --animate-in: in 0.2s ease-in;
-  --animate-out: out 0.2s ease-out;
-  --animate-slide-out: slide-out 0.2s ease-out;
-  --animate-slide-in-from-bottom: slide-in-from-bottom 0.2s ease-in;
-  --animate-slide-in-from-left: slide-in-from-left 0.4s ease-in;
-  --animate-slide-out-to-left: slide-out-to-left 0.4s ease-out;
-  --animate-slide-in-from-right: slide-in-from-right 0.4s ease-in;
-  --animate-slide-out-to-right: slide-out-to-right 0.4s ease-out;
-  --animate-accordion-down: accordion-down 0.2s ease-out;
-  --animate-accordion-up: accordion-up 0.2s ease-out;
-  --animate-bounce-right: bounce-right 1s ease-in-out infinite;
+  --color-secondary: var(--color-secondary);
+  --color-secondary-hover: var(--color-secondary-hover);
+  --color-secondary-active: var(--color-secondary-active);
+  --color-secondary-foreground: var(--color-secondary-foreground);
 
-  --color-primary-regular: hsl(210 91% 45%);
+  --color-bg: var(--color-bg);
+  --color-bg-muted: var(--color-bg-muted);
+  --color-surface: var(--color-surface);
+  --color-surface-hover: var(--color-surface-hover);
+  --color-border: var(--color-border);
+  --color-border-strong: var(--color-border-strong);
+
+  --color-text: var(--color-text);
+  --color-text-muted: var(--color-text-muted);
+}
+
+/* ========================= */
+/* LIGHT MODE                */
+/* ========================= */
+:root {
+  --color-primary: hsl(210 91% 45%);
+  --color-primary-hover: hsl(210 91% 40%);
+  --color-primary-active: hsl(210 91% 35%);
   --color-primary-foreground: hsl(0 10% 93%);
 
-  --color-secondary-regular: hsl(220 70% 20%);
+  --color-secondary: hsl(220 70% 20%);
+  --color-secondary-hover: hsl(220 70% 17%);
+  --color-secondary-active: hsl(220 70% 14%);
   --color-secondary-foreground: hsl(220 100% 98%);
 
-  --color-neutral-black: hsl(0 0% 7.5%);
-  --color-neutral-white: hsl(0 0% 97.6%);
-  --color-neutral-grey: hsl(0 0% 76.9%);
-  --color-neutral-grey-light: hsl(0 0% 98%);
-  --color-neutral-dark: hsl(180 23.5% 9%);
+  /* NEUTRALS */
+  --color-bg: hsl(0 0% 100%);
+  --color-bg-muted: hsl(0 0% 97%);
+  --color-surface: hsl(0 0% 99%);
+  --color-surface-hover: hsl(0 0% 96%);
+  --color-border: hsl(0 0% 85%);
+  --color-border-strong: hsl(0 0% 70%);
+  --color-text: hsl(0 0% 7.5%);
+  --color-text-muted: hsl(0 0% 40%);
+}
+
+/* ========================= */
+/* DARK MODE                 */
+/* ========================= */
+:root.dark,
+:root[data-theme="dark"] {
+  --color-primary: hsl(210 91% 60%);
+  --color-primary-hover: hsl(210 91% 55%);
+  --color-primary-active: hsl(210 91% 50%);
+  --color-primary-foreground: hsl(0 10% 6%);
+
+  --color-secondary: hsl(220 70% 70%);
+  --color-secondary-hover: hsl(220 70% 65%);
+  --color-secondary-active: hsl(220 70% 60%);
+  --color-secondary-foreground: hsl(220 60% 6%);
+
+  --color-bg: hsl(0 0% 6%);
+  --color-bg-muted: hsl(0 0% 10%);
+  --color-surface: hsl(0 0% 12%);
+  --color-surface-hover: hsl(0 0% 16%);
+  --color-border: hsl(0 0% 22%);
+  --color-border-strong: hsl(0 0% 32%);
+  --color-text: hsl(0 0% 92%);
+  --color-text-muted: hsl(0 0% 70%);
 
   --color-feedback-error: hsl(4 89% 58%);
   --color-feedback-warning: hsl(36 100% 50%);
@@ -50,151 +88,7 @@
   --breakpoint-lg: 1200px;
   --breakpoint-xl: 1440px;
 
-  --background-image-effect-granula: url('/effectgranula.png');
+  --background-image-effect-granula: url("/effectgranula.png");
 
   --min-height-screen-nav: calc(100vh - 5rem);
-
-  @keyframes spin {
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  @keyframes wave {
-    0% {
-      transform: scaleX(1);
-      opacity: 0.5;
-    }
-    25% {
-      transform: scaleX(2.1);
-    }
-    50% {
-      transform: scaleX(3.2);
-      opacity: 1;
-    }
-    75% {
-      transform: scaleX(2.1);
-    }
-    100% {
-      transform: scaleX(1);
-      opacity: 0.5;
-    }
-  }
-  @keyframes shimmer {
-    100% {
-      transform: translateX(100%);
-    }
-  }
-  @keyframes bounce-in {
-    0% {
-      transform: scale(0.1) translateY(100%);
-      opacity: 0;
-    }
-    60% {
-      transform: scale(1.2);
-      opacity: 1;
-    }
-    100% {
-      transform: scale(1) translateY(0);
-    }
-  }
-  @keyframes fade-in {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  @keyframes fade-out {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-  @keyframes slide-out {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-      transform: translateX(100%);
-    }
-  }
-  @keyframes slide-in-from-bottom {
-    0% {
-      opacity: 0;
-      transform: translateY(100%);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  @keyframes accordion-down {
-    from {
-      height: 0;
-    }
-    to {
-      height: var(--radix-accordion-content-height);
-    }
-  }
-  @keyframes accordion-up {
-    from {
-      height: var(--radix-accordion-content-height);
-    }
-    to {
-      height: 0;
-    }
-  }
-  @keyframes slide-in-from-left {
-    0% {
-      opacity: 0;
-      transform: translateX(-100%);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  @keyframes slide-out-to-left {
-    0% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    100% {
-      opacity: 0;
-      transform: translateX(-100%);
-    }
-  }
-  @keyframes slide-in-from-right {
-    0% {
-      opacity: 0;
-      transform: translateX(100%);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  @keyframes slide-out-to-right {
-    0% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    100% {
-      opacity: 0;
-      transform: translateX(100%);
-    }
-  }
-  @keyframes bounce-right {
-    0%,
-    100% {
-      transform: translateX(-2px);
-    }
-    50% {
-      transform: translateX(4px);
-    }
-  }
 }

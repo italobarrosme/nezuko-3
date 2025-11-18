@@ -1,5 +1,5 @@
+import { afterAll, beforeEach, describe, expect, it, vi } from 'vitest'
 import { getCustomLog } from './logs'
-import { vi, describe, it, beforeEach, afterAll, expect } from 'vitest'
 const mockDate = new Date('1/1/2021, 12:00:00')
 const consoleMock = vi.spyOn(console, 'log')
 
