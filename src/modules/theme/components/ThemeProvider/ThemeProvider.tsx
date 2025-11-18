@@ -1,7 +1,7 @@
-"use client";
+'use client'
 
-import { useLayoutEffect } from "react";
-import { useThemeStore } from "../../store/useThemeStore";
+import { useLayoutEffect } from 'react'
+import { useThemeStore } from '../../store/useThemeStore'
 
 /**
  * Provider de tema que aplica a classe 'dark' no elemento <html>
@@ -12,19 +12,19 @@ import { useThemeStore } from "../../store/useThemeStore";
  * Usa useLayoutEffect para aplicar o tema de forma síncrona antes da pintura.
  */
 export function ThemeProvider() {
-  const theme = useThemeStore((state) => state.theme);
+  const theme = useThemeStore((state) => state.theme)
 
   useLayoutEffect(() => {
-    const htmlElement = document.documentElement;
+    const htmlElement = document.documentElement
 
-    if (theme === "dark") {
-      htmlElement.classList.add("dark");
-      htmlElement.setAttribute("data-theme", "dark");
+    if (theme === 'dark') {
+      htmlElement.classList.add('dark')
+      htmlElement.setAttribute('data-theme', 'dark')
     } else {
-      htmlElement.classList.remove("dark");
-      htmlElement.removeAttribute("data-theme");
+      htmlElement.classList.remove('dark')
+      htmlElement.removeAttribute('data-theme')
     }
-  }, [theme]);
+  }, [theme])
 
-  return null;
+  return null
 }

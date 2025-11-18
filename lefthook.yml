@@ -8,6 +8,8 @@ pre-push:
   commands:
     packages-audit:
       run: npm run build
+    tests:
+      run: npm run test:deploy
 
 pre-commit:
   parallel: true

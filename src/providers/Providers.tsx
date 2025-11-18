@@ -1,10 +1,10 @@
-import { ReactNode } from "react";
-import { ThemeProvider } from "@/modules/theme/components/ThemeProvider";
-import { ButtonThemeToggle } from "@/modules/theme/components/ButtonThemeToggle";
+import { ButtonThemeToggle } from '@/modules/theme/components/ButtonThemeToggle'
+import { ThemeProvider } from '@/modules/theme/components/ThemeProvider'
+import { ReactNode } from 'react'
 
 type ProvidersProps = {
-  children: ReactNode;
-};
+  children: ReactNode
+}
 
 /**
  * Componente responsável por renderizar todos os providers da aplicação.
@@ -25,5 +25,5 @@ export function Providers({ children }: ProvidersProps) {
       <ButtonThemeToggle />
       {children}
     </>
-  );
+  )
 }

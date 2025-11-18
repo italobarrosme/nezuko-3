@@ -1,22 +1,22 @@
-import "@/styles/globals.css";
+import '@/styles/globals.css'
 
-import { NavbarAuthUser } from "@/modules/auth/components/Navbar";
-import { Providers } from "@/providers";
-import { Metadata } from "next";
-import { ReactNode } from "react";
+import { NavbarAuthUser } from '@/modules/auth/components/Navbar'
+import { Providers } from '@/providers'
+import { Metadata } from 'next'
+import { ReactNode } from 'react'
 
 type Props = {
-  children?: ReactNode;
-};
+  children?: ReactNode
+}
 
 export const metadata: Metadata = {
-  title: "Nezuko 3",
-  description: "Nezuko 3",
-  manifest: "/manifest.json",
+  title: 'Nezuko 3',
+  description: 'Nezuko 3',
+  manifest: '/manifest.json',
   icons: {
-    apple: "/apple-icon.png",
+    apple: '/apple-icon.png',
   },
-};
+}
 
 export default async function RootLayout({ children }: Props) {
   return (
@@ -28,5 +28,5 @@ export default async function RootLayout({ children }: Props) {
         </Providers>
       </body>
     </html>
-  );
+  )
 }

@@ -3,5 +3,5 @@ export default async function Home() {
     <section className="flex max-w-5xl flex-col gap-16">
       Nezuko 3 - Boilerplate
     </section>
-  );
+  )
 }

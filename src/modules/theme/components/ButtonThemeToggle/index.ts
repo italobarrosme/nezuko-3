@@ -1,2 +1,1 @@
-export { ButtonThemeToggle } from "./ButtonThemeToggle";
-
+export { ButtonThemeToggle } from './ButtonThemeToggle'
