@@ -4,6 +4,33 @@
 
 Boilerplate para desenvolvimento de aplicações Next.js com TypeScript, seguindo práticas de arquitetura e padrões de código.
 
+## 📦 Instalação
+
+Para criar um novo projeto usando este boilerplate como template:
+
+```bash
+npx create-next-app@latest teu-app -e https://github.com/italobarrosme/nezuko-3
+```
+
+Ou usando o comando completo com todas as opções:
+
+```bash
+npx create-next-app@latest my-app \
+  --example https://github.com/italobarrosme/nezuko-3 \
+  --typescript \
+  --tailwind \
+  --app \
+  --use-npm
+```
+
+**Alternativa via Git:**
+
+```bash
+git clone https://github.com/italobarrosme/nezuko-3.git my-app
+cd my-app
+npm install
+```
+
 ## 🚀 Stacks e Tecnologias
 
 ### Core
