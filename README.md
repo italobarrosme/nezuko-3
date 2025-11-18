@@ -321,12 +321,6 @@ npm run format:check # Verifica formatação
 npm run lefthook-install # Instala hooks do Git
 ```
 
-### Utilitários
-
-```bash
-npm run update:browserslist # Atualiza banco de dados do Browserslist
-```
-
 ### Docker
 
 ```bash
