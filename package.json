@@ -1,6 +1,6 @@
 {
   "name": "nezuko-3",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Nezuko 3",
   "private": true,
   "type": "module",
@@ -18,7 +18,8 @@
     "lint": "biome check .",
     "lint:fix": "biome check --write .",
     "format": "biome format --write .",
-    "format:check": "biome format ."
+    "format:check": "biome format .",
+    "update:browserslist": "npx update-browserslist-db@latest"
   },
   "prisma": {
     "seed": "node --loader ts-node/esm prisma/lib/seed.ts"
